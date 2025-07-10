@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="address1" class="com.autowire.usingxml.Address">
+		<property name="street" value="Bihta" />
+		<property name="area" value="Mahavir nagar" />
+	</bean>
+
+	<bean name="address" class="com.autowire.usingxml.Address">
+		<property name="street" value="Patna" />
+		<property name="area" value="Boaring Road" />
+	</bean>
+
+	<!-- if we define byName it will search for address name in bean class which 
+		is defined in Employee class for Address address -->
+	<!-- <bean name="emp" class="com.autowire.usingxml.Employe" autowire="byName" 
+		/> -->
+
+	<!-- if we defined byType it will search in bean class for Address class 
+		defination only not name -->
+	<!-- <bean name="emp" class="com.autowire.usingxml.Employe" autowire="byType" 
+		/> -->
+
+	<!-- if we defined constructor also it will search for byName internally 
+		but init will be in constructor -->
+	<bean name="emp" class="com.autowire.usingxml.Employe"
+		autowire="constructor" />
+
+
+
+</beans>
