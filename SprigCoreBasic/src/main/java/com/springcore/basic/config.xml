@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+	<!-- created bean for collections -->
+
+	<bean class="com.springcore.basic.EmpColl" name="emp">
+		<property name="name">
+			<value>sunny</value>
+		</property>
+
+		<property name="address">
+			<set>
+				<value>
+					Bihta
+				</value>
+				<value>Patna</value>
+				<value>Noida</value>
+			</set>
+		</property>
+
+		<property name="courses">
+			<map>
+				<entry key="java" value="3 months" />
+				<entry key="php" value="2 months" />
+			</map>
+		</property>
+
+	</bean>
+
+	<!-- creating ref object -->
+	<bean class="com.springcore.basic.RefA" name="refa">
+		<property name="x" value="10" />
+	</bean>
+
+
+	<!-- or in shortcut we can creat like this not working need to check -->
+	<!-- <bean class="com.springcore.basic.refB" name="refb" p:y="20" p:refA-ref="refa" 
+		/> -->
+
+	<bean class="com.springcore.basic.RefB" name="refb">
+		<property name="y" value="20" />
+		<property name="refA">
+			<ref bean="refa" />
+		</property>
+	</bean>
+
+	<!-- 
+	for constructor
+	<bean class="com.springcore.ci.Certi" name="cer" c:name="Python programming 
+		Languae"> </bean>
+		
+		<bean class="com.springcore.ci. Person" name="person"> 
+		<constructor-arg value="sunny" /> 
+		<constructor-arg value="12" /> 
+		<constructor-arg ref="cer" /> 
+		</bean> 
+		
+		-->
+
+</beans>

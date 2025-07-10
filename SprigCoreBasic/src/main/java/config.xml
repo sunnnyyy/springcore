@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 1st way to create object -->
+	<bean class="com.springcore.basic.Student" name="student1">
+		<property name="id">
+			<value>1</value>
+		</property>
+		<property name="name">
+			<value>sunny</value>
+		</property>
+		<property name="address">
+			<value>patna</value>
+		</property>
+	</bean>
+
+	<!-- we can create multiple object here of same student class we can create 
+		another way here by removing value property -->
+
+	<bean class="com.springcore.basic.Student" name="student2">
+		<property name="id" value="2" />
+		<property name="name" value="dev" />
+		<property name="address" value="bihta" />
+	</bean>
+
+	<!-- or we can use p:schema way the best way -->
+
+	<bean class="com.springcore.basic.Student" name="student3"
+		p:id="3" p:name="nirbhay" p:address="noida" />
+
+
+</beans>
